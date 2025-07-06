@@ -1,0 +1,141 @@
+- changeSet:
+    id: 3
+    author: your_name
+    comment: Insert sample order data with different execution scenarios
+    changes:
+      # Insert equity orders
+      - insert:
+          tableName: orders
+          columns:
+            - column: { name: cl_ord_id, value: "ORD10001" }
+            - column: { name: symbol, value: "AAPL" }
+            - column: { name: side, value: "1" }
+            - column: { name: transact_time, valueDate: "2024-01-15T09:30:00" }
+            - column: { name: order_qty, valueNumeric: "100" }
+            - column: { name: ord_type, value: "2" }
+            - column: { name: price, valueNumeric: "150.25" }
+            - column: { name: time_in_force, value: "DAY" }
+            - column: { name: account, value: "ACCT001" }
+            - column: { name: ord_status, value: "2" }  # Filled
+
+      - insert:
+          tableName: orders
+          columns:
+            - column: { name: cl_ord_id, value: "ORD10002" }
+            - column: { name: symbol, value: "MSFT" }
+            - column: { name: side, value: "2" }
+            - column: { name: transact_time, valueDate: "2024-01-15T10:15:00" }
+            - column: { name: order_qty, valueNumeric: "200" }
+            - column: { name: ord_type, value: "2" }
+            - column: { name: price, valueNumeric: "250.50" }
+            - column: { name: time_in_force, value: "GTC" }
+            - column: { name: account, value: "ACCT001" }
+            - column: { name: ord_status, value: "4" }  # Canceled
+
+      - insert:
+          tableName: orders
+          columns:
+            - column: { name: cl_ord_id, value: "ORD10003" }
+            - column: { name: symbol, value: "GOOGL" }
+            - column: { name: side, value: "1" }
+            - column: { name: transact_time, valueDate: "2024-01-15T11:00:00" }
+            - column: { name: order_qty, valueNumeric: "150" }
+            - column: { name: ord_type, value: "1" }
+            - column: { name: time_in_force, value: "DAY" }
+            - column: { name: account, value: "ACCT002" }
+            - column: { name: ord_status, value: "0" }  # New/Open
+
+      - insert:
+          tableName: orders
+          columns:
+            - column: { name: cl_ord_id, value: "ORD10004" }
+            - column: { name: symbol, value: "AMZN" }
+            - column: { name: side, value: "1" }
+            - column: { name: transact_time, valueDate: "2024-01-15T13:30:00" }
+            - column: { name: order_qty, valueNumeric: "300" }
+            - column: { name: ord_type, value: "2" }
+            - column: { name: price, valueNumeric: "125.75" }
+            - column: { name: time_in_force, value: "DAY" }
+            - column: { name: account, value: "ACCT002" }
+            - column: { name: ord_status, value: "1" }  # Partially filled
+            - column: { name: cum_qty, valueNumeric: "120" }
+            - column: { name: leaves_qty, valueNumeric: "180" }
+
+      - insert:
+          tableName: orders
+          columns:
+            - column: { name: cl_ord_id, value: "ORD10005" }
+            - column: { name: symbol, value: "TSLA" }
+            - column: { name: side, value: "2" }
+            - column: { name: transact_time, valueDate: "2024-01-15T14:45:00" }
+            - column: { name: order_qty, valueNumeric: "80" }
+            - column: { name: ord_type, value: "2" }
+            - column: { name: price, valueNumeric: "180.20" }
+            - column: { name: time_in_force, value: "IOC" }
+            - column: { name: account, value: "ACCT003" }
+            - column: { name: ord_status, value: "1" }  # Partially filled
+            - column: { name: cum_qty, valueNumeric: "50" }
+            - column: { name: leaves_qty, valueNumeric: "30" }
+
+      # Insert executions for the filled order (ORD10001)
+      - insert:
+          tableName: executions
+          columns:
+            - column: { name: exec_id, value: "EXEC10001" }
+            - column: { name: cl_ord_id, value: "ORD10001" }
+            - column: { name: exec_type, value: "F" }  # Trade
+            - column: { name: symbol, value: "AAPL" }
+            - column: { name: side, value: "1" }
+            - column: { name: last_qty, valueNumeric: "100" }
+            - column: { name: last_px, valueNumeric: "150.25" }
+            - column: { name: leaves_qty, valueNumeric: "0" }
+            - column: { name: cum_qty, valueNumeric: "100" }
+            - column: { name: avg_px, valueNumeric: "150.25" }
+            - column: { name: ord_status, value: "2" }  # Filled
+            - column: { name: transact_time, valueDate: "2024-01-15T09:30:05" }
+
+      # Insert executions for the canceled order (ORD10002)
+      - insert:
+          tableName: executions
+          columns:
+            - column: { name: exec_id, value: "EXEC10002" }
+            - column: { name: cl_ord_id, value: "ORD10002" }
+            - column: { name: exec_type, value: "4" }  # Canceled
+            - column: { name: symbol, value: "MSFT" }
+            - column: { name: side, value: "2" }
+            - column: { name: ord_status, value: "4" }  # Canceled
+            - column: { name: transact_time, valueDate: "2024-01-15T10:20:00" }
+
+      # Insert executions for partially filled order (ORD10004)
+      - insert:
+          tableName: executions
+          columns:
+            - column: { name: exec_id, value: "EXEC10003" }
+            - column: { name: cl_ord_id, value: "ORD10004" }
+            - column: { name: exec_type, value: "F" }  # Trade
+            - column: { name: symbol, value: "AMZN" }
+            - column: { name: side, value: "1" }
+            - column: { name: last_qty, valueNumeric: "120" }
+            - column: { name: last_px, valueNumeric: "125.75" }
+            - column: { name: leaves_qty, valueNumeric: "180" }
+            - column: { name: cum_qty, valueNumeric: "120" }
+            - column: { name: avg_px, valueNumeric: "125.75" }
+            - column: { name: ord_status, value: "1" }  # Partially filled
+            - column: { name: transact_time, valueDate: "2024-01-15T13:31:30" }
+
+      # Insert executions for partially filled order (ORD10005)
+      - insert:
+          tableName: executions
+          columns:
+            - column: { name: exec_id, value: "EXEC10004" }
+            - column: { name: cl_ord_id, value: "ORD10005" }
+            - column: { name: exec_type, value: "F" }  # Trade
+            - column: { name: symbol, value: "TSLA" }
+            - column: { name: side, value: "2" }
+            - column: { name: last_qty, valueNumeric: "50" }
+            - column: { name: last_px, valueNumeric: "180.20" }
+            - column: { name: leaves_qty, valueNumeric: "30" }
+            - column: { name: cum_qty, valueNumeric: "50" }
+            - column: { name: avg_px, valueNumeric: "180.20" }
+            - column: { name: ord_status, value: "1" }  # Partially filled
+            - column: { name: transact_time, valueDate: "2024-01-15T14:45:15" }

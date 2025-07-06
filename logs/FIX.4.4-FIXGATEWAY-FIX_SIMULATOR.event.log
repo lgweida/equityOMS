@@ -1,0 +1,520 @@
+20250705-13:50:24: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-13:50:24: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-13:50:24: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-13:50:24: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:50:54: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-13:50:54: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-13:50:54: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-13:50:54: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:15: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-13:53:15: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-13:53:15: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-13:53:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:53:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:54:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:55:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:56:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:57:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:58:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-13:59:35: MINA session created: local=/127.0.0.1:48938, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-13:59:36: Initiated logon request
+20250705-13:59:36: Received logon
+20250705-14:47:56: Initiated logout request
+20250705-14:47:56: Received logout response
+20250705-14:47:56: Disconnecting: Received logout response
+20250705-15:03:54: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:03:54: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:03:54: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:03:54: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-15:04:25: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:04:25: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:04:25: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:04:25: MINA session created: local=/127.0.0.1:46550, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:04:26: Initiated logon request
+20250705-15:04:26: Received logon
+20250705-15:09:37: Initiated logout request
+20250705-15:09:37: Received logout response
+20250705-15:09:37: Disconnecting: Received logout response
+20250705-15:10:57: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:10:57: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:10:57: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:10:57: MINA session created: local=/127.0.0.1:38754, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:10:58: Initiated logon request
+20250705-15:10:58: Received logout request: MsgSeqNum too low, expecting 17 but received 1
+20250705-15:10:58: Sent logout response
+20250705-15:10:58: Disconnecting: Received logout request: MsgSeqNum too low, expecting 17 but received 1
+20250705-15:11:58: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:11:58: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:11:58: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:11:58: MINA session created: local=/127.0.0.1:42852, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:11:59: Initiated logon request
+20250705-15:11:59: Received logout request: MsgSeqNum too low, expecting 17 but received 1
+20250705-15:11:59: Sent logout response
+20250705-15:11:59: Disconnecting: Received logout request: MsgSeqNum too low, expecting 17 but received 1
+20250705-15:12:03: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-15:12:16: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:12:16: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:12:16: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:12:16: MINA session created: local=/127.0.0.1:35260, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:12:17: Initiated logon request
+20250705-15:12:17: Received logon
+20250705-15:32:17: Initiated logout request
+20250705-15:32:17: Received logout response
+20250705-15:32:17: Disconnecting: Received logout response
+20250705-15:32:41: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:32:41: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:32:41: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:32:41: MINA session created: local=/127.0.0.1:48692, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:32:42: Initiated logon request
+20250705-15:32:42: Received logon
+20250705-15:32:43: Initiated logout request
+20250705-15:32:43: Received logout response
+20250705-15:32:43: Disconnecting: Received logout response
+20250705-15:32:53: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:32:53: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:32:53: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:32:53: MINA session created: local=/127.0.0.1:53810, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:32:54: Initiated logon request
+20250705-15:32:54: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250705-15:32:54: Sent logout response
+20250705-15:32:54: Disconnecting: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250705-15:32:58: MINA session created: local=/127.0.0.1:46608, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:32:59: Initiated logon request
+20250705-15:32:59: Received logon
+20250705-15:32:59: MsgSeqNum too high, expecting 1 but received 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250705-15:32:59.43756=FIXGATEWAY98=0108=3010=019
+20250705-15:32:59: Enqueued at pos 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250705-15:32:59.43756=FIXGATEWAY98=0108=3010=019
+20250705-15:32:59: Sent ResendRequest FROM: 1 TO: infinity
+20250705-15:32:59: Received SequenceReset FROM: 1 TO: 5
+20250705-15:33:29: ResendRequest for messages FROM 1 TO 3 has been satisfied.
+20250705-15:38:21: Initiated logout request
+20250705-15:38:21: Received logout response
+20250705-15:38:21: Disconnecting: Received logout response
+20250705-15:38:38: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:38:38: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:38:38: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:38:38: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-15:38:49: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-15:38:49: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-15:38:50: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-15:38:50: MINA session created: local=/127.0.0.1:58948, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-15:38:51: Initiated logon request
+20250705-15:38:51: Received logon
+20250705-15:45:28: Received logout request
+20250705-15:45:28: Sent logout response
+20250705-15:45:28: Disconnecting: Received logout request
+20250705-15:45:29: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-15:45:34: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:45:36: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-17:45:36: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-17:45:36: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-17:45:36: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:45:56: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-17:45:56: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-17:45:56: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-17:45:56: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:46:01: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:46:06: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:46:11: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:46:16: MINA session created: local=/127.0.0.1:45852, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-17:46:17: Initiated logon request
+20250705-17:46:17: Received logon
+20250705-17:51:15: Received logout request
+20250705-17:51:15: Sent logout response
+20250705-17:51:15: Disconnecting: Received logout request
+20250705-17:51:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:51:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-17:51:39: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-17:51:39: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-17:51:39: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-17:51:39: MINA session created: local=/127.0.0.1:34834, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-17:51:40: Initiated logon request
+20250705-17:51:40: Received logon
+20250705-17:51:41: Initiated logout request
+20250705-17:51:41: Received logout response
+20250705-17:51:41: Disconnecting: Received logout response
+20250705-17:51:50: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-17:51:50: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-17:51:50: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-17:51:50: MINA session created: local=/127.0.0.1:57350, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-17:51:51: Initiated logon request
+20250705-17:51:51: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250705-17:51:51: Sent logout response
+20250705-17:51:51: Disconnecting: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250705-17:51:55: MINA session created: local=/127.0.0.1:47904, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-17:51:56: Initiated logon request
+20250705-17:51:56: Received logon
+20250705-17:51:56: MsgSeqNum too high, expecting 1 but received 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250705-17:51:56.79356=FIXGATEWAY98=0108=3010=024
+20250705-17:51:56: Enqueued at pos 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250705-17:51:56.79356=FIXGATEWAY98=0108=3010=024
+20250705-17:51:56: Sent ResendRequest FROM: 1 TO: infinity
+20250705-17:51:56: Received SequenceReset FROM: 1 TO: 5
+20250705-17:52:27: ResendRequest for messages FROM 1 TO 3 has been satisfied.
+20250705-18:58:25: Received logout request
+20250705-18:58:25: Sent logout response
+20250705-18:58:25: Disconnecting: Received logout request
+20250705-18:58:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:58:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:58:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:58:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:58:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:58:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:58:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-18:59:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:00:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:00: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:05: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:10: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:25: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:30: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:35: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:40: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:45: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:01:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:02:12: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-19:02:12: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-19:02:12: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-19:02:12: MINA session created: local=/127.0.0.1:60132, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-19:02:13: Initiated logon request
+20250705-19:02:13: Received logon
+20250705-19:09:14: Received logout request
+20250705-19:09:14: Sent logout response
+20250705-19:09:14: Disconnecting: Received logout request
+20250705-19:09:15: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:09:20: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:09:57: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-19:09:57: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-19:09:57: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-19:09:57: MINA session created: local=/127.0.0.1:40046, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-19:09:58: Initiated logon request
+20250705-19:09:58: Received logon
+20250705-19:11:33: Received logout request
+20250705-19:11:33: Sent logout response
+20250705-19:11:33: Disconnecting: Received logout request
+20250705-19:11:33: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:11:38: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:11:50: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-19:11:50: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-19:11:50: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-19:11:50: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:11:55: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:12:00: MINA session created: local=/127.0.0.1:46088, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-19:12:01: Initiated logon request
+20250705-19:12:01: Received logon
+20250705-19:21:39: Received logout request
+20250705-19:21:39: Sent logout response
+20250705-19:21:39: Disconnecting: Received logout request
+20250705-19:21:39: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:21:44: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:22:03: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-19:22:03: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-19:22:04: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-19:22:04: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:22:19: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-19:22:19: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-19:22:19: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-19:22:19: MINA session created: local=/127.0.0.1:37624, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-19:22:20: Initiated logon request
+20250705-19:22:20: Received logon
+20250705-19:28:43: Received logout request
+20250705-19:28:43: Sent logout response
+20250705-19:28:43: Disconnecting: Received logout request
+20250705-19:28:44: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:28:49: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:28:54: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:28:59: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:04: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:09: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:14: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:19: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:24: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:29: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:34: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:47: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-19:29:47: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-19:29:47: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-19:29:48: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-19:29:53: MINA session created: local=/127.0.0.1:34424, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-19:29:54: Initiated logon request
+20250705-19:29:54: Received logon
+20250705-19:36:56: Received logout request
+20250705-19:36:56: Sent logout response
+20250705-19:36:56: Disconnecting: Received logout request
+20250705-21:42:28: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-21:42:28: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-21:42:28: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-21:42:28: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:42:33: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:42:38: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:42:43: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:42:48: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:42:53: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:42:58: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:43:03: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:43:08: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:43:13: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250705-21:43:18: MINA session created: local=/127.0.0.1:41428, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-21:43:19: Initiated logon request
+20250705-21:43:19: Received logon
+20250705-22:05:00: Initiated logout request
+20250705-22:05:00: Received logout response
+20250705-22:05:00: Disconnecting: Received logout response
+20250705-22:05:20: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250705-22:05:20: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250705-22:05:20: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250705-22:05:20: MINA session created: local=/127.0.0.1:49882, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250705-22:05:21: Initiated logon request
+20250705-22:05:21: Received logon
+20250706-00:00:00: Session state is not current; resetting FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-00:00:00: Initiated logout request
+20250706-00:00:00: Received logout response
+20250706-00:00:00: Disconnecting: Received logout response
+20250706-00:00:00: MINA session created: local=/127.0.0.1:33262, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-00:00:01: Initiated logon request
+20250706-00:00:01: Received logon
+20250706-00:00:01: Received ResendRequest FROM: 1 TO: infinity
+20250706-00:00:01: Sent SequenceReset TO: 2
+20250706-00:26:37: Initiated logout request
+20250706-00:26:37: Received logout response
+20250706-00:26:37: Disconnecting: Received logout response
+20250706-00:27:21: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-00:27:21: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-00:27:21: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-00:27:21: java.net.ConnectException during connection to localhost/127.0.0.1:9800: java.net.ConnectException: Connection refused (Next retry in 5000 milliseconds)
+20250706-00:27:33: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-00:27:33: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-00:27:33: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-00:27:33: MINA session created: local=/127.0.0.1:36412, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-00:27:34: Initiated logon request
+20250706-00:27:34: Received logon
+20250706-01:19:01: Initiated logout request
+20250706-01:19:01: Received logout response
+20250706-01:19:01: Disconnecting: Received logout response
+20250706-01:19:13: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-01:19:13: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-01:19:13: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-01:19:13: MINA session created: local=/127.0.0.1:35076, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-01:19:14: Initiated logon request
+20250706-01:19:14: Received logout request: MsgSeqNum too low, expecting 106 but received 1
+20250706-01:19:14: Sent logout response
+20250706-01:19:14: Disconnecting: Received logout request: MsgSeqNum too low, expecting 106 but received 1
+20250706-01:19:18: MINA session created: local=/127.0.0.1:32940, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-01:19:19: Initiated logon request
+20250706-01:19:19: Received logout request: MsgSeqNum too low, expecting 106 but received 3
+20250706-01:19:19: Sent logout response
+20250706-01:19:19: Disconnecting: Received logout request: MsgSeqNum too low, expecting 106 but received 3
+20250706-01:19:23: MINA session created: local=/127.0.0.1:32950, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-01:19:23: Disconnecting: Encountered END_OF_STREAM
+20250706-01:19:53: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-01:19:53: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-01:19:53: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-01:19:53: MINA session created: local=/127.0.0.1:35506, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-01:19:54: Initiated logon request
+20250706-01:19:54: Received logout request: MsgSeqNum too low, expecting 106 but received 1
+20250706-01:19:54: Sent logout response
+20250706-01:19:54: Disconnecting: Received logout request: MsgSeqNum too low, expecting 106 but received 1
+20250706-01:20:35: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-01:20:35: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-01:20:35: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-01:20:35: MINA session created: local=/127.0.0.1:35538, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-01:20:36: Initiated logon request
+20250706-01:20:36: Received logon
+20250706-12:31:25: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-12:31:25: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-12:31:25: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-12:31:25: MINA session created: local=/127.0.0.1:49986, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-12:31:26: Initiated logon request
+20250706-12:31:26: Received logon
+20250706-12:41:15: Initiated logout request
+20250706-12:41:15: Received logout response
+20250706-12:41:15: Disconnecting: Received logout response
+20250706-12:41:57: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-12:41:57: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-12:41:57: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-12:41:57: MINA session created: local=/127.0.0.1:57016, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-12:41:58: Initiated logon request
+20250706-12:41:58: Disconnecting: Encountered END_OF_STREAM
+20250706-12:42:07: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-12:42:07: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-12:42:07: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-12:42:07: MINA session created: local=/127.0.0.1:39330, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-12:42:08: Initiated logon request
+20250706-12:42:08: Received logout request: MsgSeqNum too low, expecting 2 but received 1
+20250706-12:42:08: Sent logout response
+20250706-12:42:08: Disconnecting: Received logout request: MsgSeqNum too low, expecting 2 but received 1
+20250706-12:42:12: MINA session created: local=/127.0.0.1:39346, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-12:42:13: Initiated logon request
+20250706-12:42:13: Received logon
+20250706-12:42:13: MsgSeqNum too high, expecting 1 but received 3: 8=FIX.4.49=7835=A34=349=FIX_SIMULATOR52=20250706-12:42:13.60556=FIXGATEWAY98=0108=3010=004
+20250706-12:42:13: Enqueued at pos 3: 8=FIX.4.49=7835=A34=349=FIX_SIMULATOR52=20250706-12:42:13.60556=FIXGATEWAY98=0108=3010=004
+20250706-12:42:13: Sent ResendRequest FROM: 1 TO: infinity
+20250706-12:42:13: Enqueued at pos 4: 8=FIX.4.49=7535=234=449=FIX_SIMULATOR52=20250706-12:42:13.60856=FIXGATEWAY7=216=010=089
+20250706-12:42:13: Received ResendRequest FROM: 2 TO: infinity
+20250706-12:42:13: Sent SequenceReset TO: 5
+20250706-12:42:13: Received SequenceReset FROM: 1 TO: 5
+20250706-12:42:44: ResendRequest for messages FROM 1 TO 2 has been satisfied.
+20250706-13:40:51: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-13:40:51: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-13:40:51: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-13:40:51: MINA session created: local=/127.0.0.1:58902, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-13:40:52: Initiated logon request
+20250706-13:40:52: Received logon
+20250706-15:23:13: Initiated logout request
+20250706-15:23:13: Received logout response
+20250706-15:23:13: Disconnecting: Received logout response
+20250706-15:23:55: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-15:23:55: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-15:23:55: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-15:23:55: MINA session created: local=/127.0.0.1:51080, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-15:23:56: Initiated logon request
+20250706-15:23:56: Received logon
+20250706-15:23:57: Initiated logout request
+20250706-15:23:57: Received logout response
+20250706-15:23:57: Disconnecting: Received logout response
+20250706-15:24:07: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-15:24:07: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-15:24:07: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-15:24:07: MINA session created: local=/127.0.0.1:46340, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-15:24:08: Initiated logon request
+20250706-15:24:08: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250706-15:24:08: Sent logout response
+20250706-15:24:08: Disconnecting: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250706-15:24:12: MINA session created: local=/127.0.0.1:46352, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-15:24:13: Initiated logon request
+20250706-15:24:13: Received logon
+20250706-15:24:13: MsgSeqNum too high, expecting 1 but received 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250706-15:24:13.57756=FIXGATEWAY98=0108=3010=016
+20250706-15:24:13: Enqueued at pos 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250706-15:24:13.57756=FIXGATEWAY98=0108=3010=016
+20250706-15:24:13: Sent ResendRequest FROM: 1 TO: infinity
+20250706-15:24:13: Received SequenceReset FROM: 1 TO: 5
+20250706-15:24:43: ResendRequest for messages FROM 1 TO 3 has been satisfied.
+20250706-15:42:11: Initiated logout request
+20250706-15:42:11: Received logout response
+20250706-15:42:11: Disconnecting: Received logout response
+20250706-15:42:32: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-15:42:32: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-15:42:32: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-15:42:32: MINA session created: local=/127.0.0.1:47636, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-15:42:33: Initiated logon request
+20250706-15:42:33: Received logon
+20250706-17:03:52: Initiated logout request
+20250706-17:03:52: Received logout response
+20250706-17:03:52: Disconnecting: Received logout response
+20250706-17:04:20: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-17:04:20: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-17:04:20: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-17:04:20: MINA session created: local=/127.0.0.1:37642, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-17:04:21: Initiated logon request
+20250706-17:04:21: Received logon
+20250706-17:04:23: Initiated logout request
+20250706-17:04:23: Received logout response
+20250706-17:04:23: Disconnecting: Received logout response
+20250706-17:04:35: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250706-17:04:35: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250706-17:04:35: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250706-17:04:36: MINA session created: local=/127.0.0.1:38622, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-17:04:37: Initiated logon request
+20250706-17:04:37: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250706-17:04:37: Sent logout response
+20250706-17:04:37: Disconnecting: Received logout request: MsgSeqNum too low, expecting 3 but received 1
+20250706-17:04:41: MINA session created: local=/127.0.0.1:38632, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250706-17:04:41: Initiated logon request
+20250706-17:04:41: Received logon
+20250706-17:04:41: MsgSeqNum too high, expecting 1 but received 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250706-17:04:41.99256=FIXGATEWAY98=0108=3010=018
+20250706-17:04:41: Enqueued at pos 4: 8=FIX.4.49=7835=A34=449=FIX_SIMULATOR52=20250706-17:04:41.99256=FIXGATEWAY98=0108=3010=018
+20250706-17:04:41: Sent ResendRequest FROM: 1 TO: infinity
+20250706-17:04:41: Received SequenceReset FROM: 1 TO: 5
+20250706-17:04:57: ResendRequest for messages FROM 1 TO 3 has been satisfied.
+20250706-21:49:14: Initiated logout request
+20250706-21:49:14: Received logout response
+20250706-21:49:14: Disconnecting: Received logout response

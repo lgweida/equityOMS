@@ -1,0 +1,300 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: your_name
+      comment: Create orders table with FIX 4.4 NewOrderSingle minimum required fields
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              # Common identifiers
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: Auto-incremented primary key
+              - column:
+                  name: cl_ord_id
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+                    unique: true
+                  remarks: Unique identifier for order as assigned by institution
+              - column:
+                  name: orig_cl_ord_id
+                  type: VARCHAR(64)
+                  remarks: Original order ID in case of cancel/replace
+
+              # Instrument details
+              - column:
+                  name: symbol
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+                  remarks: Ticker symbol
+              - column:
+                  name: security_id
+                  type: VARCHAR(20)
+                  remarks: Security identifier
+              - column:
+                  name: security_id_source
+                  type: VARCHAR(20)
+                  remarks: Source of security identifier
+
+              # Order characteristics
+              - column:
+                  name: side
+                  type: CHAR(1)
+                  constraints:
+                    nullable: false
+                  remarks: 1=Buy, 2=Sell, etc.
+              - column:
+                  name: transact_time
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+                  remarks: Time of order creation
+              - column:
+                  name: order_qty
+                  type: DECIMAL(20,4)
+                  constraints:
+                    nullable: false
+                  remarks: Order quantity
+              - column:
+                  name: ord_type
+                  type: CHAR(1)
+                  constraints:
+                    nullable: false
+                  remarks: Order type (1=Market, 2=Limit, etc.)
+              - column:
+                  name: price
+                  type: DECIMAL(20,4)
+                  remarks: Price for limit orders
+              - column:
+                  name: time_in_force
+                  type: VARCHAR(10)
+                  remarks: Order duration (e.g. DAY, GTC, IOC)
+
+              # Party information
+              - column:
+                  name: account
+                  type: VARCHAR(20)
+                  remarks: Account identifier
+              - column:
+                  name: sender_comp_id
+                  type: VARCHAR(20)
+                  remarks: Sending firm identifier
+              - column:
+                  name: target_comp_id
+                  type: VARCHAR(20)
+                  remarks: Target firm identifier
+
+              # Status fields
+              - column:
+                  name: ord_status
+                  type: CHAR(1)
+                  defaultValueComputed: "0"
+                  remarks: Order status (0=New, 1=Partially filled, 2=Filled, etc.)
+              - column:
+                  name: cum_qty
+                  type: DECIMAL(20,4)
+                  defaultValueComputed: "0"
+                  remarks: Cumulative quantity filled
+              - column:
+                  name: leaves_qty
+                  type: DECIMAL(20,4)
+                  remarks: Quantity remaining to be filled
+
+              # Timestamps
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+                  remarks: Last update timestamp
+
+        - createIndex:
+            tableName: orders
+            indexName: idx_orders_cl_ord_id
+            columns:
+              - column:
+                  name: cl_ord_id
+
+        - createIndex:
+            tableName: orders
+            indexName: idx_orders_symbol
+            columns:
+              - column:
+                  name: symbol
+
+        - createIndex:
+            tableName: orders
+            indexName: idx_orders_transact_time
+            columns:
+              - column:
+                  name: transact_time
+
+  - changeSet:
+      id: 2
+      author: your_name
+      comment: Create executions table with FIX 4.4 ExecutionReport minimum required fields
+      changes:
+        - createTable:
+            tableName: executions
+            columns:
+              # Common identifiers
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  remarks: Auto-incremented primary key
+              - column:
+                  name: exec_id
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+                    unique: true
+                  remarks: Unique identifier of execution
+              - column:
+                  name: cl_ord_id
+                  type: VARCHAR(64)
+                  constraints:
+                    nullable: false
+                  remarks: Reference to original order
+              - column:
+                  name: order_id
+                  type: VARCHAR(64)
+                  remarks: Exchange-assigned order ID
+
+              # Execution details
+              - column:
+                  name: exec_type
+                  type: CHAR(1)
+                  constraints:
+                    nullable: false
+                  remarks: Execution type (0=New, 4=Canceled, F=Trade, etc.)
+              - column:
+                  name: exec_trans_type
+                  type: CHAR(1)
+                  remarks: Exec transaction type (0=New, 1=Cancel, 2=Correct, etc.)
+              - column:
+                  name: exec_ref_id
+                  type: VARCHAR(64)
+                  remarks: Reference to a previous execution (for cancels/replaces)
+
+              # Instrument details
+              - column:
+                  name: symbol
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+                  remarks: Ticker symbol
+              - column:
+                  name: security_id
+                  type: VARCHAR(20)
+                  remarks: Security identifier
+              - column:
+                  name: security_id_source
+                  type: VARCHAR(20)
+                  remarks: Source of security identifier
+
+              # Trade details
+              - column:
+                  name: last_qty
+                  type: DECIMAL(20,4)
+                  remarks: Quantity bought/sold in this fill
+              - column:
+                  name: last_px
+                  type: DECIMAL(20,4)
+                  remarks: Price of this fill
+              - column:
+                  name: leaves_qty
+                  type: DECIMAL(20,4)
+                  remarks: Quantity remaining to be filled
+              - column:
+                  name: cum_qty
+                  type: DECIMAL(20,4)
+                  remarks: Cumulative quantity filled
+              - column:
+                  name: avg_px
+                  type: DECIMAL(20,4)
+                  remarks: Average price of all fills
+
+              # Party information
+              - column:
+                  name: account
+                  type: VARCHAR(20)
+                  remarks: Account identifier
+              - column:
+                  name: side
+                  type: CHAR(1)
+                  constraints:
+                    nullable: false
+                  remarks: 1=Buy, 2=Sell, etc.
+
+              # Status fields
+              - column:
+                  name: ord_status
+                  type: CHAR(1)
+                  remarks: Order status (0=New, 1=Partially filled, 2=Filled, etc.)
+
+              # Timestamps
+              - column:
+                  name: transact_time
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+                  remarks: Time of execution
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+        - createIndex:
+            tableName: executions
+            indexName: idx_executions_exec_id
+            columns:
+              - column:
+                  name: exec_id
+
+        - createIndex:
+            tableName: executions
+            indexName: idx_executions_cl_ord_id
+            columns:
+              - column:
+                  name: cl_ord_id
+
+        - createIndex:
+            tableName: executions
+            indexName: idx_executions_order_id
+            columns:
+              - column:
+                  name: order_id
+
+        - createIndex:
+            tableName: executions
+            indexName: idx_executions_transact_time
+            columns:
+              - column:
+                  name: transact_time
+
+        - addForeignKeyConstraint:
+            baseTableName: executions
+            baseColumnNames: cl_ord_id
+            constraintName: fk_executions_orders
+            referencedTableName: orders
+            referencedColumnNames: cl_ord_id

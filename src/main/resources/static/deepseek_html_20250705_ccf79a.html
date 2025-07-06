@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equity Order Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="icon" href="data:,"> <!-- Added to prevent favicon.ico request -->
+    
+    <!-- Tailwind CSS Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        success: '#52C41A',
+                        warning: '#FAAD14',
+                        danger: '#FF4D4F',
+                        dark: '#1D2129',
+                        'dark-light': '#4E5969',
+                        'light-bg': '#F2F3F5',
+                        'card-bg': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .order-shadow {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            }
+            .panel-shadow {
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            }
+            .hover-scale {
+                transition: transform 0.2s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-dark min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white panel-shadow sticky top-0 z-30">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-line-chart text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold text-primary">EQUITY ORDER MANAGEMENT</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="pl-8 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                    <i class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button class="relative p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fa fa-bell-o text-gray-600"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-danger rounded-full"></span>
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <img src="https://picsum.photos/id/1005/200/200" alt="User Avatar" class="w-8 h-8 rounded-full object-cover">
+                        <span class="font-medium">John Smith</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 container mx-auto px-4 py-6 flex flex-col md:flex-row gap-6">
+        <!-- Left Panel: Order List -->
+        <div class="w-full md:w-1/3 lg:w-1/4 bg-white rounded-xl panel-shadow overflow-hidden flex flex-col order-shadow">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+                <h2 class="font-bold text-lg">Orders</h2>
+                <button id="newOrderBtn" class="bg-primary hover:bg-primary/90 text-white px-3 py-1.5 rounded-lg flex items-center transition-all duration-200 shadow-md hover:shadow-lg">
+                    <i class="fa fa-plus mr-2"></i> New Order
+                </button>
+            </div>
+            
+            <!-- Order Filters -->
+            <div class="p-3 border-b border-gray-100 bg-gray-50">
+                <div class="grid grid-cols-2 gap-2">
+                    <select class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-sm">
+                        <option>All Orders</option>
+                        <option>Active</option>
+                        <option>Executed</option>
+                        <option>Cancelled</option>
+                    </select>
+                    <select class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-sm">
+                        <option>All Symbols</option>
+                        <option>AAPL</option>
+                        <option>MSFT</option>
+                        <option>GOOGL</option>
+                        <option>AMZN</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Order List -->
+            <div id="orderList" class="flex-1 overflow-y-auto scrollbar-hide">
+                <!-- Orders will be dynamically added here -->
+            </div>
+        </div>
+        
+        <!-- Middle Panel: Order Detail -->
+        <div class="w-full md:w-2/3 lg:w-1/2 bg-white rounded-xl panel-shadow overflow-hidden flex flex-col order-shadow">
+            <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+                <h2 class="font-bold text-lg">Order Detail</h2>
+                <div class="flex space-x-2">
+                    <button id="amendOrderBtn" class="bg-secondary hover:bg-secondary/90 text-white px-3 py-1.5 rounded-lg flex items-center transition-all duration-200 shadow-md hover:shadow-lg">
+                        <i class="fa fa-pencil mr-2"></i> Amend
+                    </button>
+                    <button id="cancelOrderBtn" class="bg-danger hover:bg-danger/90 text-white px-3 py-1.5 rounded-lg flex items-center transition-all duration-200 shadow-md hover:shadow-lg">
+                        <i class="fa fa-times mr-2"></i> Cancel
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-5">
+                <!-- Order Summary -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-3">
+                        <div class="flex items-center">
+                            <h3 class="text-xl font-bold mr-2">AAPL</h3>
+                            <span class="px-2 py-0.5 text-xs rounded-full bg-success/10 text-success">Active</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-gray-500">Order #12345</div>
+                            <div class="text-xs text-gray-500">Created: 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Side</div>
+                            <div class="font-medium">Buy</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Quantity</div>
+                            <div class="font-medium">100</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Order Type</div>
+                            <div class="font-medium">Limit</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Price</div>
+                            <div class="font-medium text-primary">$185.25</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Time in Force</div>
+                            <div class="font-medium">Day</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Filled Quantity</div>
+                            <div class="font-medium">0</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Avg. Fill Price</div>
+                            <div class="font-medium">N/A</div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <div class="text-xs text-gray-500 mb-1">Value</div>
+                            <div class="font-medium text-primary">$18,525.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chart -->
+                <div class="mb-6">
+                    <h3 class="font-bold mb-3">Price Chart (1D)</h3>
+                    <div class="bg-gray-50 p-3 rounded-lg h-64">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Order Notes -->
+                <div>
+                    <h3 class="font-bold mb-3">Order Notes</h3>
+                    <div class="bg-gray-50 p-3 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            Limit order to buy 100 shares of Apple Inc. at $185.25 per share.
+                            This order will remain active until the end of the trading day or until fully executed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Panel: Execution Panel -->
+        <div class="w-full md:w-full lg:w-1/4 bg-white rounded-xl panel-shadow overflow-hidden flex flex-col order-shadow">
+            <div class="p-4 border-b border-gray-100">
+                <h2 class="font-bold text-lg">Execution History</h2>
+            </div>
+            
+            <!-- Execution List -->
+            <div class="flex-1 overflow-y-auto scrollbar-hide">
+                <div class="p-3 border-b border-gray-100">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm font-medium">Market Depth</span>
+                        <span class="text-xs text-gray-500">AAPL</span>
+                    </div>
+                    
+                    <!-- Market Depth -->
+                    <div class="space-y-1 mt-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">185.50</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-danger h-full rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium">1,200</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">185.45</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-danger h-full rounded-full" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium">950</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">185.40</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-danger h-full rounded-full" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium">780</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">185.35</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-danger h-full rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium">1,420</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">185.30</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-danger h-full rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-medium">1,150</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center my-1">
+                            <span class="text-xs font-bold text-primary">185.25</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-primary/20 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-primary">100</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium">850</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-success h-full rounded-full" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500">185.20</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium">620</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-success h-full rounded-full" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500">185.15</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium">980</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-success h-full rounded-full" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500">185.10</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium">1,350</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-success h-full rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500">185.05</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium">720</span>
+                            <div class="flex-1 mx-2">
+                                <div class="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-success h-full rounded-full" style="width: 40%"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs text-gray-500">185.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Trades -->
+                <div class="p-3 border-b border-gray-100">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium">Recent Trades</span>
+                        <span class="text-xs text-gray-500">AAPL</span>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-success">+0.25</span>
+                            <span class="text-xs">185.25</span>
+                            <span class="text-xs text-gray-500">100</span>
+                            <span class="text-xs text-gray-500">10:29:45</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-danger">-0.10</span>
+                            <span class="text-xs">185.00</span>
+                            <span class="text-xs text-gray-500">250</span>
+                            <span class="text-xs text-gray-500">10:28:30</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-success">+0.35</span>
+                            <span class="text-xs">185.35</span>
+                            <span class="text-xs text-gray-500">150</span>
+                            <span class="text-xs text-gray-500">10:27:15</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-success">+0.15</span>
+                            <span class="text-xs">185.20</span>
+                            <span class="text-xs text-gray-500">200</span>
+                            <span class="text-xs text-gray-500">10:26:00</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-danger">-0.20</span>
+                            <span class="text-xs">185.05</span>
+                            <span class="text-xs text-gray-500">300</span>
+                            <span class="text-xs text-gray-500">10:24:45</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Book -->
+                <div class="p-3">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium">Order Book</span>
+                        <span class="text-xs text-gray-500">AAPL</span>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">10:29:45</span>
+                            <span class="text-xs">185.25</span>
+                            <span class="text-xs font-medium">Buy</span>
+                            <span class="text-xs text-gray-500">100</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">10:28:30</span>
+                            <span class="text-xs">185.00</span>
+                            <span class="text-xs font-medium">Sell</span>
+                            <span class="text-xs text-gray-500">250</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">10:27:15</span>
+                            <span class="text-xs">185.35</span>
+                            <span class="text-xs font-medium">Buy</span>
+                            <span class="text-xs text-gray-500">150</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">10:26:00</span>
+                            <span class="text-xs">185.20</span>
+                            <span class="text-xs font-medium">Buy</span>
+                            <span class="text-xs text-gray-500">200</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">10:24:45</span>
+                            <span class="text-xs">185.05</span>
+                            <span class="text-xs font-medium">Sell</span>
+                            <span class="text-xs text-gray-500">300</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-4 mt-6">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
+            <p>Equity Order Management System &copy; 2023 | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+    <!-- New Order Modal -->
+    <div id="newOrderModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl w-full max-w-lg p-6 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">New Order</h3>
+                <button id="closeNewOrderModal" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            
+            <form>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Symbol</label>
+                        <input type="text" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" placeholder="e.g., AAPL" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Side</label>
+                        <select class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" required>
+                            <option>Buy</option>
+                            <option>Sell</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+                        <input type="number" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" placeholder="e.g., 100" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Order Type</label>
+                        <select class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" required>
+                            <option>Market</option>
+                            <option>Limit</option>
+                            <option>Stop</option>
+                            <option>Stop Limit</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+                        <input type="number" step="0.01" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" placeholder="e.g., 185.25">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Time in Force</label>
+                        <select class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" required>
+                            <option>Day</option>
+                            <option>GTC</option>
+                            <option>IOC</option>
+                            <option>FOK</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Order Notes</label>
+                    <textarea class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" rows="3" placeholder="Add any notes about this order..."></textarea>
+                </div>
+                
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="cancelNewOrder" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                        Cancel
+                    </button>
+                    <button type="button" id="submitOrderBtn" class="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg transition-colors shadow-md hover:shadow-lg">
+                        Submit Order
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Amend Order Modal -->
+    <div id="amendOrderModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl w-full max-w-lg p-6 transform transition-all duration-300 scale-95 opacity-0" id="amendModalContent">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Amend Order</h3>
+                <button id="closeAmendOrderModal" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            
+            <form>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Symbol</label>
+                        <input type="text" value="AAPL" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" readonly>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Side</label>
+                        <input type="text" value="Buy" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" readonly>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+                        <input type="number" value="100" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Order Type</label>
+                        <input type="text" value="Limit" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" readonly>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+                        <input type="number" step="0.01" value="185.25" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Time in Force</label>
+                        <input type="text" value="Day" class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" readonly>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Order Notes</label>
+                    <textarea class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" rows="3">Limit order to buy 100 shares of Apple Inc. at $185.25 per share.</textarea>
+                </div>
+                
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="cancelAmendOrder" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                        Cancel
+                    </button>
+                    <button type="button" class="px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg transition-colors shadow-md hover:shadow-lg">
+                        Update Order
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Cancel Order Modal -->
+    <div id="cancelOrderModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl w-full max-w-md p-6 transform transition-all duration-300 scale-95 opacity-0" id="cancelModalContent">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Cancel Order</h3>
+                <button id="closeCancelOrderModal" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mb-6">
+                <p class="text-gray-700">Are you sure you want to cancel this order?</p>
+                <div class="mt-4 p-3 bg-gray-50 rounded-lg">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm text-gray-500">Symbol:</span>
+                        <span class="text-sm font-medium">AAPL</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm text-gray-500">Side:</span>
+                        <span class="text-sm font-medium">Buy</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm text-gray-500">Quantity:</span>
+                        <span class="text-sm font-medium">100</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Price:</span>
+                        <span class="text-sm font-medium">$185.25</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-end space-x-3">
+                <button type="button" id="cancelCancelOrder" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                    No, Keep Order
+                </button>
+                <button type="button" class="px-4 py-2 bg-danger hover:bg-danger/90 text-white rounded-lg transition-colors shadow-md hover:shadow-lg">
+                    Yes, Cancel Order
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-4 right-4 px-4 py-2 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <div class="flex items-center">
+            <i class="fa fa-check-circle mr-2"></i>
+            <span id="toastMessage">Order submitted successfully!</span>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Initialize price chart
+        document.addEventListener('DOMContentLoaded', function() {
+            // Price Chart
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            const priceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['9:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '1:00'],
+                    datasets: [{
+                        label: 'AAPL Price',
+                        data: [184.25, 184.75, 185.25, 184.90, 185.10, 185.35, 185.20, 185.25],
+                        borderColor: '#165DFF',
+                        backgroundColor: 'rgba(22, 93, 255, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            grid: {
+                                borderDash: [2, 2]
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Modal functionality
+            const newOrderBtn = document.getElementById('newOrderBtn');
+            const newOrderModal = document.getElementById('newOrderModal');
+            const modalContent = document.getElementById('modalContent');
+            const closeNewOrderModal = document.getElementById('closeNewOrderModal');
+            const cancelNewOrder = document.getElementById('cancelNewOrder');
+            
+            newOrderBtn.addEventListener('click', function() {
+                newOrderModal.classList.remove('hidden');
+                setTimeout(() => {
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                    modalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            });
+            
+            function closeNewModal() {
+                modalContent.classList.remove('scale-100', 'opacity-100');
+                modalContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    newOrderModal.classList.add('hidden');
+                }, 300);
+            }
+            
+            closeNewOrderModal.addEventListener('click', closeNewModal);
+            cancelNewOrder.addEventListener('click', closeNewModal);
+            
+            // Amend Order Modal
+            const amendOrderBtn = document.getElementById('amendOrderBtn');
+            const amendOrderModal = document.getElementById('amendOrderModal');
+            const amendModalContent = document.getElementById('amendModalContent');
+            const closeAmendOrderModal = document.getElementById('closeAmendOrderModal');
+            const cancelAmendOrder = document.getElementById('cancelAmendOrder');
+            
+            amendOrderBtn.addEventListener('click', function() {
+                amendOrderModal.classList.remove('hidden');
+                setTimeout(() => {
+                    amendModalContent.classList.remove('scale-95', 'opacity-0');
+                    amendModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            });
+            
+            function closeAmendModal() {
+                amendModalContent.classList.remove('scale-100', 'opacity-100');
+                amendModalContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    amendOrderModal.classList.add('hidden');
+                }, 300);
+            }
+            
+            closeAmendOrderModal.addEventListener('click', closeAmendModal);
+            cancelAmendOrder.addEventListener('click', closeAmendModal);
+            
+            // Cancel Order Modal
+            const cancelOrderBtn = document.getElementById('cancelOrderBtn');
+            const cancelOrderModal = document.getElementById('cancelOrderModal');
+            const cancelModalContent = document.getElementById('cancelModalContent');
+            const closeCancelOrderModal = document.getElementById('closeCancelOrderModal');
+            const cancelCancelOrder = document.getElementById('cancelCancelOrder');
+            
+            cancelOrderBtn.addEventListener('click', function() {
+                cancelOrderModal.classList.remove('hidden');
+                setTimeout(() => {
+                    cancelModalContent.classList.remove('scale-95', 'opacity-0');
+                    cancelModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            });
+            
+            function closeCancelModal() {
+                cancelModalContent.classList.remove('scale-100', 'opacity-100');
+                cancelModalContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    cancelOrderModal.classList.add('hidden');
+                }, 300);
+            }
+            
+            closeCancelOrderModal.addEventListener('click', closeCancelModal);
+            cancelCancelOrder.addEventListener('click', closeCancelModal);
+            
+            // Get the new order form elements
+            const newOrderForm = document.querySelector('#newOrderModal form');
+            const submitOrderBtn = document.getElementById('submitOrderBtn');
+            
+            // Handle new order submission
+            submitOrderBtn.addEventListener('click', async function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const symbol = newOrderForm.querySelector('input[type="text"]').value.trim();
+                const side = newOrderForm.querySelector('select').value === 'Buy' ? '1' : '2';
+                const orderQty = parseFloat(newOrderForm.querySelector('input[type="number"]').value);
+                const ordType = getOrdTypeValue(newOrderForm.querySelectorAll('select')[1].value);
+                const price = parseFloat(newOrderForm.querySelector('input[type="number"]:last-of-type').value) || 0;
+                const timeInForce = getTimeInForceValue(newOrderForm.querySelectorAll('select')[2].value);
+                const notes = newOrderForm.querySelector('textarea').value.trim();
+                
+                // Validate inputs
+                if (!symbol || !orderQty || isNaN(orderQty) || orderQty <= 0) {
+                    showToast('Please fill all required fields', 'danger');
+                    return;
+                }
+                
+                // For limit orders, validate price
+                if (ordType === '2' && (!price || isNaN(price) || price <= 0)) {
+                    showToast('Please enter a valid price for limit orders', 'danger');
+                    return;
+                }
+                
+                try {
+                    // Create order payload
+                    const orderRequest = {
+                        symbol: symbol,
+                        side: side,
+                        transactTime: new Date().toISOString(),
+                        orderQty: orderQty,
+                        ordType: ordType,
+                        price: ordType === '2' ? price : null, // Only include price for limit orders
+                        timeInForce: timeInForce,
+                        account: 'ACC-' + Math.floor(1000 + Math.random() * 9000), // Generate random account for demo
+                        notes: notes
+                    };
+                    
+                    // Remove null values
+                    Object.keys(orderRequest).forEach(key => {
+                        if (orderRequest[key] === null) {
+                            delete orderRequest[key];
+                        }
+                    });
+                    
+                    // Send API request
+                    const response = await fetch('/api/orders', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(orderRequest)
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('Failed to create order');
+                    }
+                    
+                    const order = await response.json();
+                    
+                    // Close modal and show success
+                    closeNewModal();
+                    showToast('Order created successfully!', 'success');
+                    
+                    // Refresh order list
+                    setTimeout(() => {
+                        refreshOrderList();
+                    }, 500);
+                    
+                } catch (error) {
+                    console.error('Error creating order:', error);
+                    showToast('Failed to create order: ' + error.message, 'danger');
+                }
+            });
+            
+            // Helper functions for converting UI values to API values
+            function getOrdTypeValue(uiValue) {
+                const map = {
+                    'Market': '1',
+                    'Limit': '2',
+                    'Stop': '3',
+                    'Stop Limit': '4'
+                };
+                return map[uiValue] || '1';
+            }
+            
+            function getTimeInForceValue(uiValue) {
+                const map = {
+                    'Day': 'DAY',
+                    'GTC': 'GTC',
+                    'IOC': 'IOC',
+                    'FOK': 'FOK'
+                };
+                return map[uiValue] || 'DAY';
+            }
+            
+            // Function to refresh the order list
+            async function refreshOrderList() {
+                try {
+                    const response = await fetch('/api/orders');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch orders');
+                    }
+                    const orders = await response.json();
+                    
+                    const orderListContainer = document.getElementById('orderList');
+                    orderListContainer.innerHTML = ''; // Clear existing orders
+                    
+                    // Add each order to the list
+                    orders.forEach(order => {
+                        const orderItem = createOrderItemElement(order);
+                        orderListContainer.appendChild(orderItem);
+                    });
+                    
+                } catch (error) {
+                    console.error('Error fetching orders:', error);
+                    showToast('Failed to load orders', 'danger');
+                }
+            }
+            
+            // Function to create an order item element
+            function createOrderItemElement(order) {
+                const orderItem = document.createElement('div');
+                orderItem.className = 'order-item p-3 border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors';
+                
+                // Determine status and styling
+                let statusText, statusClass;
+                if (order.ordStatus === '2') {
+                    statusText = 'Filled';
+                    statusClass = 'bg-success/10 text-success';
+                } else if (order.ordStatus === '4') {
+                    statusText = 'Cancelled';
+                    statusClass = 'bg-danger/10 text-danger';
+                } else if (order.cumQty > 0) {
+                    statusText = 'Partially Filled';
+                    statusClass = 'bg-warning/10 text-warning';
+                } else {
+                    statusText = 'Active';
+                    statusClass = 'bg-success/10 text-success';
+                }
+                
+                // Format date/time
+                const transactTime = new Date(order.transactTime);
+                const timeString = transactTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                // Create HTML
+                orderItem.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="font-medium text-dark-light">${order.symbol}</div>
+                            <div class="text-xs text-gray-500">Order #${order.clOrdId}</div>
+                        </div>
+                        <span class="px-2 py-0.5 text-xs rounded-full ${statusClass}">${statusText}</span>
+                    </div>
+                    <div class="mt-2 grid grid-cols-2 gap-1 text-sm">
+                        <div>
+                            <span class="text-gray-500">Side:</span>
+                            <span class="font-medium">${order.side === '1' ? 'Buy' : 'Sell'}</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Qty:</span>
+                            <span class="font-medium">${order.orderQty}</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Type:</span>
+                            <span class="font-medium">${getOrdTypeUiValue(order.ordType)}</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-500">Price:</span>
+                            <span class="font-medium">${order.price ? '$' + order.price.toFixed(2) : 'N/A'}</span>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-500">
+                        <i class="fa fa-clock-o mr-1"></i> Created: ${timeString}
+                    </div>
+                `;
+                
+                // Add click handler to show order details
+                orderItem.addEventListener('click', function() {
+                    // Remove active class from all items
+                    document.querySelectorAll('.order-item').forEach(item => {
+                        item.classList.remove('active-order', 'bg-gray-50');
+                    });
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active-order', 'bg-gray-50');
+                    
+                    // Load order details
+                    loadOrderDetails(order);
+                });
+                
+                return orderItem;
+            }
+            
+            // Function to load order details into the detail panel
+            function loadOrderDetails(order) {
+                // Update the order detail panel with the selected order's information
+                const detailPanel = document.querySelector('.p-5'); // The container for order details
+                
+                // Determine status
+                let statusText, statusClass;
+                if (order.ordStatus === '2') {
+                    statusText = 'Filled';
+                    statusClass = 'success';
+                } else if (order.ordStatus === '4') {
+                    statusText = 'Cancelled';
+                    statusClass = 'danger';
+                } else if (order.cumQty > 0) {
+                    statusText = 'Partially Filled';
+                    statusClass = 'warning';
+                } else {
+                    statusText = 'Active';
+                    statusClass = 'success';
+                }
+                
+                // Format time
+                const transactTime = new Date(order.transactTime);
+                const timeString = transactTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                // Update the UI
+                detailPanel.innerHTML = `
+                    <!-- Order Summary -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center">
+                                <h3 class="text-xl font-bold mr-2">${order.symbol}</h3>
+                                <span class="px-2 py-0.5 text-xs rounded-full bg-${statusClass}/10 text-${statusClass}">${statusText}</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Order #${order.clOrdId}</div>
+                                <div class="text-xs text-gray-500">Created: ${timeString}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Side</div>
+                                <div class="font-medium">${order.side === '1' ? 'Buy' : 'Sell'}</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Quantity</div>
+                                <div class="font-medium">${order.orderQty}</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Order Type</div>
+                                <div class="font-medium">${getOrdTypeUiValue(order.ordType)}</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Price</div>
+                                <div class="font-medium text-primary">${order.price ? '$' + order.price.toFixed(2) : 'N/A'}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Time in Force</div>
+                                <div class="font-medium">${order.timeInForce || 'Day'}</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Filled Quantity</div>
+                                <div class="font-medium">${order.cumQty || 0}</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Avg. Fill Price</div>
+                                <div class="font-medium">${order.avgPx ? '$' + order.avgPx.toFixed(2) : 'N/A'}</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <div class="text-xs text-gray-500 mb-1">Value</div>
+                                <div class="font-medium text-primary">$${(order.orderQty * (order.price || 0)).toFixed(2)}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart -->
+                    <div class="mb-6">
+                        <h3 class="font-bold mb-3">Price Chart (1D)</h3>
+                        <div class="bg-gray-50 p-3 rounded-lg h-64">
+                            <canvas id="priceChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Notes -->
+                    <div>
+                        <h3 class="font-bold mb-3">Order Notes</h3>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <p class="text-sm text-gray-600">
+                                ${order.notes || 'No notes available for this order.'}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                
+                // Reinitialize the chart for the new order
+                const ctx = document.getElementById('priceChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['9:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '1:00'],
+                        datasets: [{
+                            label: `${order.symbol} Price`,
+                            data: generateRandomPriceData(order.price || 100), // Use actual price or fallback
+                            borderColor: '#165DFF',
+                            backgroundColor: 'rgba(22, 93, 255, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: {
+                                    display: false
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    borderDash: [2, 2]
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Helper function to generate random price data around a base price
+            function generateRandomPriceData(basePrice) {
+                return Array(8).fill(0).map((_, i) => {
+                    const variation = (Math.random() * 2 - 1) * (basePrice * 0.02); // ±2% variation
+                    return basePrice + variation;
+                });
+            }
+            
+            // Helper function to convert API ordType to UI value
+            function getOrdTypeUiValue(apiValue) {
+                const map = {
+                    '1': 'Market',
+                    '2': 'Limit',
+                    '3': 'Stop',
+                    '4': 'Stop Limit'
+                };
+                return map[apiValue] || 'Market';
+            }
+            
+            // Function to show toast messages
+            function showToast(message, type = 'success') {
+                const toast = document.getElementById('toast');
+                const toastMessage = document.getElementById('toastMessage');
+                
+                // Update styling based on type
+                toast.className = `fixed bottom-4 right-4 px-4 py-2 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 ${
+                    type === 'success' ? 'bg-success text-white' : 
+                    type === 'danger' ? 'bg-danger text-white' : 
+                    'bg-warning text-dark'
+                }`;
+                
+                // Update icon based on type
+                let iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+                toast.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fa ${iconClass} mr-2"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+                
+                // Show toast
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+                
+                // Hide after 3 seconds
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
+            
+            // Load initial order list
+            refreshOrderList();
+        });
+    </script>
+</body>
+</html>
