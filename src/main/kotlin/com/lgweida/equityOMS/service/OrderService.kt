@@ -73,7 +73,31 @@ class OrderService(private val orderRepository: OrderRepository,
         }.orElse(null)
     }
 
-    fun deleteOrder(id: Long) {
-        orderRepository.deleteById(id)
+    fun cancelOrder(id: Long) {
+        val order = orderRepository.findById(id)
+            .orElseThrow { OrderNotFoundException("Order not found with id: $id") }
+
+        // Generate a new ClOrdID for the cancel request (FIX protocol requirement)
+        val clOrdId = clOrdIdGenerator.generate()
+        
+        // Build the FIX Order Cancel Request message
+        val fixCancelMessage = fixMessageProcessor.createCancelRequest(
+            origClOrdId = order.clOrdId,  // Original Client Order ID
+            clOrdId = clOrdId,            // New Client Order ID for the cancel
+            symbol = order.symbol,
+            side = order.side,
+            orderQty = order.orderQty
+        )
+
+        // Send the FIX message via fixClient (like createOrder)
+        fixClient.sendMessage(fixCancelMessage)
+
+        // Optional: Update order status to "PENDING_CANCEL" (if not immediately confirmed)
+        order.status = OrderStatus.PENDING_CANCEL
+        orderRepository.save(order)
+
+        // Notify (e.g., log or send a WebSocket update)
+        notificationService.notifyOrderCancellation(order)
+        //orderRepository.deleteById(id)
     }
 }

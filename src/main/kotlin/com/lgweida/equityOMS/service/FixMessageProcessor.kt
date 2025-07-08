@@ -40,7 +40,6 @@ class FixMessageProcessor(private val orderRepository: OrderRepository) {
         val nos = NewOrderSingle()
 
         nos.set(ClOrdID(order.clOrdId))
-        //nos.set(Side(convertSide(order.side)))
         nos.set(Side(order.side.toChar()))
         nos.set(TransactTime())
         nos.set(OrdType(order.ordType))

@@ -5,11 +5,17 @@ FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # Copy the build.gradle.kts and settings.gradle.kts files
-COPY build.gradle.kts settings.gradle.kts ./
+#COPY build.gradle.kts settings.gradle.kts ./
 
+# Copy the Gradle wrapper files
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle.kts .
+COPY settings.gradle.kts .
 # Copy the source code
 COPY src ./src
 
+RUN chmod +x ./gradlew
 # Build the application
 RUN ./gradlew build
 
