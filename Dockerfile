@@ -1,27 +1,28 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-slim
+# Use Java 21 base image
+FROM openjdk:21-jdk-slim
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the build.gradle.kts and settings.gradle.kts files
-#COPY build.gradle.kts settings.gradle.kts ./
-
-# Copy the Gradle wrapper files
+# Copy Gradle files
 COPY gradlew .
 COPY gradle gradle
 COPY build.gradle.kts .
 COPY settings.gradle.kts .
-# Copy the source code
-COPY src ./src
 
+# Copy source code
+COPY src src
+
+# Make Gradle wrapper executable
 RUN chmod +x ./gradlew
-# Build the application
-RUN ./gradlew build --stacktrace --info
 
+# Build with verbose logging and save output to a file
+RUN ./gradlew build --stacktrace --info --debug > build.log 2>&1 || true
 
-# Expose port 8081 (the port your application is running on)
+# Print the log (even if the build fails)
+RUN cat build.log
+
+# Expose port
 EXPOSE 8081
 
-# Run the application
-CMD ["java", "-jar", "build/libs/equityOMS-0.0.1-SNAPSHOT.jar"]
+# Run the app
+CMD ["java", "-jar", "build/libs/equity-oms-0.0.1-SNAPSHOT.jar"]
