@@ -17,7 +17,8 @@ COPY src ./src
 
 RUN chmod +x ./gradlew
 # Build the application
-RUN ./gradlew build
+RUN ./gradlew build --stacktrace --info
+
 
 # Expose port 8081 (the port your application is running on)
 EXPOSE 8081
