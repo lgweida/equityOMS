@@ -45,6 +45,6 @@ class OrderController(private val orderService: OrderService) {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun deleteOrder(@PathVariable id: Long) {
-        orderService.deleteOrder(id)
+       // orderService.deleteOrder(id)
     }
 }

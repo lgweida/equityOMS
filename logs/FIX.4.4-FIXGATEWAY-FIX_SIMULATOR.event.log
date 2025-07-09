@@ -518,3 +518,39 @@
 20250706-21:49:14: Initiated logout request
 20250706-21:49:14: Received logout response
 20250706-21:49:14: Disconnecting: Received logout response
+20250708-22:54:25: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250708-22:54:25: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250708-22:54:25: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250708-22:54:25: MINA session created: local=/127.0.0.1:48338, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250708-22:54:26: Initiated logon request
+20250708-22:54:26: Received logon
+20250708-22:54:27: Initiated logout request
+20250708-22:54:27: Received logout response
+20250708-22:54:27: Disconnecting: Received logout response
+20250708-22:56:15: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250708-22:56:15: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250708-22:56:15: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250708-22:56:15: MINA session created: local=/127.0.0.1:57964, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250708-22:56:16: Initiated logon request
+20250708-22:56:16: Received logon
+20250709-00:00:00: Received logout request: Session reset
+20250709-00:00:00: Sent logout response
+20250709-00:00:00: Disconnecting: Received logout request: Session reset
+20250709-00:00:00: Session state is not current; resetting FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250709-00:00:01: MINA session created: local=/127.0.0.1:32956, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250709-00:00:01: Initiated logon request
+20250709-00:00:01: Received logon
+20250709-00:00:01: Received ResendRequest FROM: 1 TO: infinity
+20250709-00:00:01: Sent SequenceReset TO: 2
+20250709-10:39:09: Initiated logout request
+20250709-10:39:09: Received logout response
+20250709-10:39:09: Disconnecting: Received logout response
+20250709-10:39:28: Session FIX.4.4:FIXGATEWAY->FIX_SIMULATOR schedule is daily, 00:00:00-UTC - 00:00:00-UTC
+20250709-10:39:28: Created session: FIX.4.4:FIXGATEWAY->FIX_SIMULATOR
+20250709-10:39:28: Configured socket addresses for session: [localhost/127.0.0.1:9800]
+20250709-10:39:28: MINA session created: local=/127.0.0.1:41946, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9800
+20250709-10:39:29: Initiated logon request
+20250709-10:39:29: Received logon
+20250709-17:36:25: Initiated logout request
+20250709-17:36:25: Received logout response
+20250709-17:36:25: Disconnecting: Received logout response

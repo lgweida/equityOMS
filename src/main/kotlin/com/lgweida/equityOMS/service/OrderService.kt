@@ -9,6 +9,7 @@ import com.lgweida.equityOMS.fix.util.ClOrdIdGenerator
 import com.lgweida.equityOMS.fix.FixClientApplication
 import com.lgweida.equityOMS.fix.FixMessageProcessor
 import com.lgweida.equityOMS.websocket.OrderNotificationService
+import com.lgweida.equityOMS.exception.OrderNotFoundException
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
@@ -81,23 +82,23 @@ class OrderService(private val orderRepository: OrderRepository,
         val clOrdId = clOrdIdGenerator.generate()
         
         // Build the FIX Order Cancel Request message
-        val fixCancelMessage = fixMessageProcessor.createCancelRequest(
-            origClOrdId = order.clOrdId,  // Original Client Order ID
-            clOrdId = clOrdId,            // New Client Order ID for the cancel
-            symbol = order.symbol,
-            side = order.side,
-            orderQty = order.orderQty
-        )
+        // val fixCancelMessage = fixMessageProcessor.createCancelRequest(
+        //     origClOrdId = order.clOrdId,  // Original Client Order ID
+        //     clOrdId = clOrdId,            // New Client Order ID for the cancel
+        //     symbol = order.symbol,
+        //     side = order.side,
+        //     orderQty = order.orderQty
+        // )
 
         // Send the FIX message via fixClient (like createOrder)
-        fixClient.sendMessage(fixCancelMessage)
+       // fixClient.sendMessage(fixCancelMessage)
 
         // Optional: Update order status to "PENDING_CANCEL" (if not immediately confirmed)
-        order.status = OrderStatus.PENDING_CANCEL
+       // order.clOrdId = OrderStatus.PENDING_CANCEL
         orderRepository.save(order)
 
         // Notify (e.g., log or send a WebSocket update)
-        notificationService.notifyOrderCancellation(order)
+       // notificationService.notifyOrderCancellation(order)
         //orderRepository.deleteById(id)
     }
 }
