@@ -1,28 +1,34 @@
-# Use Java 21 base image
-FROM openjdk:21-jdk-slim
+# Use official OpenJDK runtime as a parent image
+FROM eclipse-temurin:21-jdk-jammy as builder
 
+# Set working directory
 WORKDIR /app
 
-# Copy Gradle files
-COPY gradlew .
+# Copy gradle files first to leverage Docker cache
 COPY gradle gradle
+COPY gradlew .
 COPY build.gradle.kts .
 COPY settings.gradle.kts .
 
 # Copy source code
 COPY src src
 
-# Make Gradle wrapper executable
-RUN chmod +x ./gradlew
+# Build the application
+RUN ./gradlew build --no-daemon
 
-# Build with verbose logging and save output to a file
-RUN ./gradlew build --stacktrace --info --debug > build.log 2>&1 || true
+# Create a smaller runtime image
+FROM eclipse-temurin:17-jre-jammy
 
-# Print the log (even if the build fails)
-RUN cat build.log
+WORKDIR /app
 
-# Expose port
-EXPOSE 8081
+# Copy the built application from builder image
+COPY --from=builder /app/build/libs/*.jar app.jar
 
-# Run the app
-CMD ["java", "-jar", "build/libs/equity-oms-0.0.1-SNAPSHOT.jar"]
+# Expose the port your app runs on (Spring Boot default is 8080)
+EXPOSE 8080
+
+# Set environment variables
+ENV JAVA_OPTS=""
+
+# Command to run the application
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app/app.jar"]
